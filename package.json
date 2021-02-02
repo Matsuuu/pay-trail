@@ -1,6 +1,6 @@
 {
     "name": "@paytrail/web-component-e2",
-    "version": "0.0.6",
+    "version": "1.0.0",
     "description": "paytrail-web-component-e2 is a Vanilla Web Component implementation of the Paytrail E2 API",
     "author": "Paytrail",
     "license": "MIT",
@@ -9,6 +9,11 @@
     "files": [
         "Paytrail.js"
     ],
+    "homepage": "https://www.paytrail.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paytrail/web-component-e2"
+    },
     "scripts": {
         "start": "npm run example:html",
         "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",

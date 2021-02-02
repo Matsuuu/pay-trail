@@ -35,17 +35,25 @@ Extremely easy to set up. Uses the testing credentials, if none are probided, so
 
 paytrail-web-component-e2 will be available as a NPM package and through a CDN.
 
-Links TBA
-
 #### NPM
 
-```
-TBA as the repository is decided upon
+```bash
+npm install @paytrail/web-component-e2
 ```
 
 #### CDN
 
-TBA JSDelivr or such link
+```html
+<script src="https://unpkg.com/@paytrail/web-component-e2"></script>
+```
+
+## Usage
+
+Setup examples can be found in the [setup](#minimal-setup) region of the README.
+
+Example use cases for the generation of auth codes and handling products can be found in the [examples](#examples) region of the README.
+
+For the latest information and instructions, [see the Official Paytrail Documentation](https://docs.paytrail.com).
 
 ## Attributes
 
@@ -259,6 +267,8 @@ By specifying a `PAYMENT_METHODS` -field, you can create buttons that go straigh
 
 The payment methods and their codes are listed below
 
+For the most up to date list of all of the payment methods, see the [official documentation](https://docs.paytrail.com/payment-methods/values/)
+
 | Name                    |  Code |
 | ----------------------- | ----- |
 | Nordea                  | 1     |
@@ -268,8 +278,6 @@ The payment methods and their codes are listed below
 | Handelsbanken           | 6     |
 |  Paypal                 | 9     |
 | S-Pankki                |  10   |
-| Klarna invoice          | 11    |
-| Klarna Installment      | 12    |
 |  Jousto                 | 18    |
 | Aktia                   |  50   |
 | POP Pankki              |  51   |
