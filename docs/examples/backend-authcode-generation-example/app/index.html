@@ -125,17 +125,15 @@
                 products.push(product);
                 renderProducts();
                 paytrailComponent.addProducts(product);
-                calculateAuthcode();
             };
 
             const removeProduct = index => {
                 paytrailComponent.removeProductAtIndex(index);
                 products.splice(index, 1);
                 renderProducts();
-                calculateAuthcode();
             };
 
-            const calculateAuthcode = () => {
+            const handleSubmit = () => {
                 const authCodeString = paytrailComponent.getAuthCodeString();
                 const formData = new FormData();
                 formData.append('authCodeString', authCodeString);
@@ -146,8 +144,11 @@
                     .then(res => res.text())
                     .then(res => {
                         paytrailComponent.setAuthCode(res);
+                        paytrailComponent.submit();
                     });
             };
+
+            paytrailComponent.addEventListener('paytrail-submit', handleSubmit);
 
             const renderProducts = () => {
                 const docFrag = document.createDocumentFragment();

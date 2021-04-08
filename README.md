@@ -153,18 +153,25 @@ async handleSubmit() {
 Another way of generating the authcode is by getting the authcode string (a string of values, seperated by pipes (|), and passing it to the backend.
 
 ```js
-this.querySelector("paytrail-web-component-e2").addEventListener("paytrail-submit", handleSubmit);
+const paytrailComponent = document.querySelector("paytrail-web-component-e2");
 
-async handleSubmit() {
-    const authCodeString = this.paytrailField.getAuthCodeString();
-    const response = await fetch("http://localhost:3000/authcode", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({authCodeString})
-    });
-    this.paytrailField.setAuthCode(response.authcode);
-    this.paytrailfield.submit();
+function handleSubmit() {
+    const authCodeString = paytrailComponent.getAuthCodeString();
+    const formData = new FormData();
+    formData.append('authCodeString', authCodeString);
+    fetch('http://localhost:3000/authcode', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(res => res.text())
+        .then(res => {
+            paytrailComponent.setAuthCode(res);
+            paytrailComponent.submit();
+        });
 }
+
+paytrailComponent.addEventListener('paytrail-submit', handleSubmit);
+
 ```
 
 In the back end, the operation of generating the code would look something like this:
