@@ -1,6 +1,6 @@
 {
     "name": "@paytrail/web-component-e2",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "paytrail-web-component-e2 is a Vanilla Web Component implementation of the Paytrail E2 API",
     "author": "Paytrail",
     "license": "MIT",
